@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Harvest.Application\Harvest.Application.csproj" />
+    <ProjectReference Include="..\Harvest.Core\Harvest.Core.csproj" />
+    <ProjectReference Include="..\Harvest.Infrastructure\Harvest.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
