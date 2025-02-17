@@ -1,6 +1,6 @@
 namespace Harvest
 {
-    public class WeatherForecast
+    public class WeatherForecastApiModel
     {
         public DateOnly Date { get; set; }
 
