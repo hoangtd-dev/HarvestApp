@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { VerseViewModel } from '../../models/view-models/bible/verse.view-model'; // TODO: update path
-import { DataResponse } from '../../core/models/data-response.model'; // TODO: update path
-import { BaseService } from '../../core/services/base.service'; // TODO: update path
-import { SingleDataResponse } from './../../core/models/data-response.model'; // TODO: update path
-import {
-  CreateVerseModel,
-  UpdateVerseModel,
-} from '../../models/api/bible/verse.model'; // TODO: update path
-import { QueryParams } from '../../core/models/query-params'; // TODO: update path
+
+import { QueryParams, DataResponse, SingleDataResponse } from '@core/models';
+import { BaseService } from '@core/services';
+import { CreateVerseModel, UpdateVerseModel } from '@models/api/bible';
+import { VerseViewModel } from '@models/view/bible';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: Update path
-import { VerseViewModel } from '../../../models/view-models/bible/verse.view-model'; // TODO: Update path
+
+import { DataResponse } from '@core/models';
+import { VerseViewModel } from '@models/view/bible';
 
 export const selectVerseState =
   createFeatureSelector<DataResponse<VerseViewModel>>('verses');

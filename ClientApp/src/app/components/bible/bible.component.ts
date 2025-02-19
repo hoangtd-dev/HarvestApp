@@ -3,12 +3,9 @@ import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { loadChapters } from '../../store/actions/bible/chapter.actions';
-import { loadVerses } from '../../store/actions/bible/verse.actions';
-import { ChapterViewModel } from '../../models/view-models/bible/chapter.view-model';
-import { VerseViewModel } from '../../models/view-models/bible/verse.view-model';
-import { selectAllChapters } from '../../store/selectors/bible/chapter.selectors';
-import { selectAllVerses } from '../../store/selectors/bible/verse.selectors';
+import { ChapterViewModel, VerseViewModel } from '@models/view/bible';
+import { loadChapters, loadVerses } from '@store/actions';
+import { selectAllChapters, selectAllVerses } from '@store/selectors';
 
 @Component({
   selector: 'app-bible',
