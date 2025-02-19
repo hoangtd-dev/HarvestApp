@@ -1,0 +1,14 @@
+<button (click)="loadChapters()">Load Chapter</button>
+<button (click)="loadVerses()">Load Verse</button>
+<h3>Chapter</h3>
+<ul>
+  @for (chapter of (chapters$ | async); track chapter) {
+  <li>{{ chapter.name }}</li>
+  }
+</ul>
+<h3>Verses</h3>
+<ul>
+  @for (verse of (verses$ | async); track verse) {
+  <li>{{ verse.name }}</li>
+  }
+</ul>
