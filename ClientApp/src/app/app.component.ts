@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BibleComponent } from './components/bible/bible.component';
 
 @Component({
   selector: 'app-root',
