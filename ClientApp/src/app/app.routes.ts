@@ -2,10 +2,8 @@ import { Routes } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideState } from '@ngrx/store';
 
-import { ChapterEffects } from './store/effects/bible/chapter.effects';
-import { VerseEffects } from './store/effects/bible/verse.effects';
-import { chapterReducer } from './store/reducers/bible/chapter.reducers';
-import { verseReducer } from './store/reducers/bible/verse.reducers';
+import { ChapterEffects, VerseEffects } from '@store/effects';
+import { chapterReducer, verseReducer } from '@store/reducers';
 
 export const routes: Routes = [
   {
