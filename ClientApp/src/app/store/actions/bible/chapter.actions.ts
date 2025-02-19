@@ -1,10 +1,8 @@
 import { createAction, props } from '@ngrx/store';
-import {
-  CreateChapterModel,
-  UpdateChapterModel,
-} from '../../../models/api/bible/chapter.model'; // TODO: update path
-import { ChapterViewModel } from '../../../models/view-models/bible/chapter.view-model'; // TODO: update path
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: update path
+
+import { DataResponse } from '@core/models';
+import { CreateChapterModel, UpdateChapterModel } from '@models/api/bible';
+import { ChapterViewModel } from '@models/view/bible';
 
 export const createChapter = createAction(
   '[Chapter] Create Chapter',

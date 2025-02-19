@@ -1,7 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { updateChapterList } from '../../actions/bible/chapter.actions'; // TODO: Update path
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: Update path
-import { ChapterViewModel } from '../../../models/view-models/bible/chapter.view-model'; // TODO: Update path
+
+import { DataResponse } from '@core/models';
+import { ChapterViewModel } from '@models/view/bible';
+import { updateChapterList } from '@store/actions';
 
 const initialState = new DataResponse<ChapterViewModel>([
   {

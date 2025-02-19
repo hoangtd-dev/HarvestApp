@@ -1,14 +1,11 @@
 import { Injectable, inject } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { mergeMap, map } from 'rxjs';
-import { ChapterService } from '../../../services/bible/chapter.service'; // TODO: update model
-import {
-  createChapter,
-  loadChapters,
-  updateChapterList,
-} from '../../actions/bible/chapter.actions'; // TODO: update model
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: update model
-import { ChapterViewModel } from '../../../models/view-models/bible/chapter.view-model'; // TODO: update model
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+
+import { DataResponse } from '@core/models';
+import { ChapterViewModel } from '@models/view/bible';
+import { ChapterService } from '@services/bible';
+import { createChapter, loadChapters, updateChapterList } from '@store/actions';
 
 @Injectable()
 export class ChapterEffects {

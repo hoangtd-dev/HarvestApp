@@ -1,16 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BaseService } from '../../core/services/base.service'; // TODO: update path
-import {
-  DataResponse,
-  SingleDataResponse,
-} from './../../core/models/data-response.model'; // TODO: update path
-import {
-  CreateChapterModel,
-  UpdateChapterModel,
-} from '../../models/api/bible/chapter.model'; // TODO: update path
-import { ChapterViewModel } from '../../models/view-models/bible/chapter.view-model'; // TODO: update path
-import { QueryParams } from '../../core/models/query-params'; // TODO: update path
+
+import { QueryParams, DataResponse, SingleDataResponse } from '@core/models';
+import { BaseService } from '@core/services';
+import { CreateChapterModel, UpdateChapterModel } from '@models/api/bible';
+import { ChapterViewModel } from '@models/view/bible';
 
 @Injectable({
   providedIn: 'root',

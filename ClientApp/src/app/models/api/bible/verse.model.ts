@@ -1,4 +1,4 @@
-import { BaseModel } from '../../../core/models/base.model'; // TODO: Update path
+import { BaseModel } from '@core/models';
 
 export class VerseModel extends BaseModel {
   public name: number;

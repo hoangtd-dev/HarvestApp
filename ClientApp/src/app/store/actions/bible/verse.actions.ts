@@ -1,10 +1,8 @@
 import { createAction, props } from '@ngrx/store';
-import {
-  CreateVerseModel,
-  UpdateVerseModel,
-} from '../../../models/api/bible/verse.model'; // TODO: update model
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: update model
-import { VerseViewModel } from '../../../models/view-models/bible/verse.view-model'; // TODO: update model
+
+import { DataResponse } from '@core/models';
+import { CreateVerseModel, UpdateVerseModel } from '@models/api/bible';
+import { VerseViewModel } from '@models/view/bible';
 
 export const createVerse = createAction(
   '[Verse] Create Verse',

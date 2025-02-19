@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: Update path
-import { ChapterViewModel } from '../../../models/view-models/bible/chapter.view-model'; // TODO: Update path
+
+import { DataResponse } from '@core/models';
+import { ChapterViewModel } from '@models/view/bible';
 
 export const selectChapterState =
   createFeatureSelector<DataResponse<ChapterViewModel>>('chapters');
@@ -10,7 +11,7 @@ export const selectAllChapters = createSelector(
   (data) => data.data
 );
 
-export const selectAllVersesLoading = createSelector(
+export const selectAllChapterLoading = createSelector(
   selectChapterState,
   (data) => data.isLoading
 );

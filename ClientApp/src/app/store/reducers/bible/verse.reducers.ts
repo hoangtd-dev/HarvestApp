@@ -1,7 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: Update path
-import { VerseViewModel } from '../../../models/view-models/bible/verse.view-model'; // TODO: Update path
-import { updateVerseList } from '../../actions/bible/verse.actions'; // TODO: Update path
+
+import { DataResponse } from '@core/models';
+import { VerseViewModel } from '@models/view/bible';
+import { updateVerseList } from '@store/actions';
 
 const initialState = new DataResponse<VerseViewModel>([
   {

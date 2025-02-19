@@ -1,9 +1,6 @@
 import { map, Observable, of } from 'rxjs';
-import {
-  DataResponse,
-  SingleDataResponse,
-} from '../models/data-response.model'; // TODO: Update Path
-import { QueryParams } from '../models/query-params'; // TODO: Update path
+
+import { QueryParams, DataResponse, SingleDataResponse } from '@core/models';
 
 export class BaseService<T> {
   constructor() {}

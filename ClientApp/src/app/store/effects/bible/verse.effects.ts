@@ -1,15 +1,12 @@
 import { inject, Injectable } from '@angular/core';
+import { map, mergeMap } from 'rxjs';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap, of } from 'rxjs';
-import { VerseService } from '../../../services/bible/verse.service'; // TODO: update model
-import {
-  createVerse,
-  loadVerses,
-  updateVerseList,
-} from '../../actions/bible/verse.actions'; // TODO: update model
-import { DataResponse } from '../../../core/models/data-response.model'; // TODO: update model
-import { VerseViewModel } from '../../../models/view-models/bible/verse.view-model'; // TODO: update model
-import { CreateVerseModel } from '../../../models/api/bible/verse.model'; // TODO: update model
+
+import { DataResponse } from '@core/models';
+import { CreateVerseModel } from '@models/api/bible';
+import { VerseViewModel } from '@models/view/bible';
+import { VerseService } from '@services/bible';
+import { createVerse, loadVerses, updateVerseList } from '@store/actions';
 
 @Injectable()
 export class VerseEffects {
