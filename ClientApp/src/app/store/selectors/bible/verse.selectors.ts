@@ -3,7 +3,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { DataResponse } from '@core/models';
 import { VerseViewModel } from '@models/view/bible';
 
-export const selectVerseState =
+const selectVerseState =
   createFeatureSelector<DataResponse<VerseViewModel>>('verses');
 
 export const selectAllVerses = createSelector(
