@@ -22,7 +22,8 @@
       "@services/*": ["./src/app/services/*"],
       "@models/api/*": ["./src/app/models/api/*"],
       "@models/view/*": ["./src/app/models/view-models/*"],
-      "@store/*": ["./src/app/store/*"]
+      "@store/*": ["./src/app/store/*"],
+      "@shared/*": ["./src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {
