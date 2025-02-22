@@ -10,7 +10,7 @@ import { provideEffects } from '@ngrx/effects';
 
 import { routes } from './app.routes';
 import { appReducers } from '@store/reducers';
-import { ThemeService } from '@services/core';
+import { RouteService, ThemeService } from '@services/core';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +22,7 @@ export const appConfig: ApplicationConfig = {
 
     provideAppInitializer(() => {
       inject(ThemeService);
+      inject(RouteService);
     }),
   ],
 };

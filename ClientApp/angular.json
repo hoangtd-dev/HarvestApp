@@ -30,7 +30,10 @@
                 "output": "/assets/"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/material-symbols/index.css"
+            ],
             "scripts": []
           },
           "configurations": {
