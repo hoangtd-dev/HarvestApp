@@ -1,0 +1,31 @@
+<div class="flex h-full w-full flex-col items-center justify-between px-2 py-4">
+  <div>
+    <div class="border-line border-b-2 pb-2">
+      <a href="#"><img class="m-auto h-10 w-10 rounded-full" src="assets/favicon.ico" /></a>
+    </div>
+
+    <div class="mt-4 flex w-full flex-col items-center justify-start gap-4">
+      @for (route of routes$ | async; track route) {
+        <span class="material-symbols-outlined cursor-pointer">
+          <a
+            class="inline-block rounded-md p-3 !font-light transition-colors hover:bg-primary-200 hover:text-primary-900 dark:hover:bg-primary-900 dark:hover:text-primary-400"
+            (click)="navigate(route.path)"
+            [ngClass]="{
+              'bg-primary-200 text-primary-900 dark:bg-primary-900 dark:text-primary-400':
+                route.isActive,
+            }"
+            >{{ route.iconStr }}
+          </a></span
+        >
+      }
+    </div>
+  </div>
+
+  <div>
+    <span class="material-symbols-outlined cursor-pointer">
+      <a class="inline-block rounded-md p-3 !font-light text-red-500 transition-colors"
+        >logout
+      </a></span
+    >
+  </div>
+</div>
