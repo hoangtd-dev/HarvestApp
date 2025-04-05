@@ -10,7 +10,7 @@ namespace Harvest.Infrastructure.Configurations.Shared.Bible
         {
             builder.HasOne(c => c.Language)
                 .WithMany(b => b.Chapters)
-                .HasForeignKey(c => c.Language)
+                .HasForeignKey(c => c.LanguageId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
