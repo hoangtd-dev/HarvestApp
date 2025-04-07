@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-song',
   imports: [],
   templateUrl: './song.component.html',
-  styleUrl: './song.component.scss'
+  styleUrl: './song.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SongComponent {
-
-}
+export class SongComponent {}

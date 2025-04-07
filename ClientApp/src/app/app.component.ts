@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
@@ -10,5 +10,6 @@ import { FooterComponent } from './components/shared/footer/footer.component';
   imports: [RouterOutlet, SidebarComponent, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {}
