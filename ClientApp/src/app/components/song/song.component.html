@@ -1,1 +1,11 @@
-<p>song works!</p>
+<div>
+  <input type="text" [(appCustomBinding)]="username" />
+  <p [appStyle]="{ color: 'red', background: 'yellow' }">Song</p>
+  <ng-content select="[role=content]"></ng-content>
+  <button (click)="submit()"></button>
+  <ng-template appAuth>
+    <p>{{ 'Test Auth' | modifyText: 3 : 'test' : true }}</p>
+  </ng-template>
+
+  <p>{{ title }}</p>
+</div>
