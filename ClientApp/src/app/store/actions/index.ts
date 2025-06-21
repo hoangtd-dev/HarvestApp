@@ -1,3 +1,2 @@
-export * from './bible';
-export * from './song';
-export * from './core';
+export * from './sidebar.actions';
+export * from './theme.actions';

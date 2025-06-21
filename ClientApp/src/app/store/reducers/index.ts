@@ -1,3 +1,1 @@
-export * from './bible';
-export * from './song';
-export * from './core';
+export * from './app.reducers';
