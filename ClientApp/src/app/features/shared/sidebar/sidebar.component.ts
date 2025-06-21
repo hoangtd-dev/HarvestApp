@@ -12,7 +12,6 @@ import { selectRoutes } from '@store/selectors';
   selector: 'app-sidebar',
   imports: [CommonModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
@@ -22,5 +21,10 @@ export class SidebarComponent {
 
   public navigate(path: string): void {
     this._router.navigate([path]);
+  }
+
+  public logout(): void {
+    // TODO: Implement logout
+    this._router.navigate(['/auth/login']);
   }
 }

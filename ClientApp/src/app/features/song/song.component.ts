@@ -4,8 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-song',
   imports: [],
   templateUrl: './song.component.html',
-  styleUrl: './song.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SongComponent {
-}
+export class SongComponent {}

@@ -1,15 +1,23 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Signal, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-import { SidebarComponent } from './features/shared/sidebar/sidebar.component';
-import { HeaderComponent } from './features/shared/header/header.component';
-import { FooterComponent } from './features/shared/footer/footer.component';
+import { AuthenticatedLayoutComponent } from './layouts/authenticated-layout/authenticated-layout.component';
+import { NonAuthenticatedLayoutComponent } from './layouts/non-authenticated-layout/non-authenticated-layout.component';
+import { AuthService } from './core/auth/auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    AuthenticatedLayoutComponent,
+    NonAuthenticatedLayoutComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+  private readonly _authService = inject(AuthService);
+  public isAuthenticated: Signal<boolean> = signal(this._authService.isAuthenticated());
+}
