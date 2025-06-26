@@ -11,7 +11,7 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { appReducers } from '@store/reducers';
-import { RouteService, ThemeService } from '@services/core';
+import { ThemeService } from '@services/core';
 import { AuthService } from './core/auth/auth.service';
 
 export const appConfig: ApplicationConfig = {
@@ -25,7 +25,6 @@ export const appConfig: ApplicationConfig = {
 
     provideAppInitializer(() => {
       inject(ThemeService);
-      inject(RouteService);
       inject(AuthService);
     }),
   ],

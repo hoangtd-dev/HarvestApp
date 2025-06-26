@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { authGuard } from './core/auth/auth.guard';
+import { authGuard, nonAuthGuard } from './core/auth/auth.guard';
+import { NonAuthenticatedLayoutComponent } from './layouts/non-authenticated-layout/non-authenticated-layout.component';
+import { AuthenticatedLayoutComponent } from './layouts/authenticated-layout/authenticated-layout.component';
 
 export const ROUTE_PATHS = {
   DASHBOARD: 'dashboard',
@@ -12,32 +14,35 @@ export const ROUTE_PATHS = {
 };
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: ROUTE_PATHS.AUTH,
+    path: '',
+    canActivate: [nonAuthGuard],
+    component: NonAuthenticatedLayoutComponent,
     children: [
       {
-        path: ROUTE_PATHS.LOGIN,
-        loadComponent: () =>
-          import('./core/auth/login/login.component').then((m) => m.LoginComponent),
+        path: 'login',
+        loadComponent: () => import('./core/auth/auth.component').then((m) => m.AuthComponent),
       },
     ],
   },
   {
-    path: ROUTE_PATHS.DASHBOARD,
+    path: '',
     canActivate: [authGuard],
-    loadComponent: () =>
-      import('./features/dashboard/dashboard.component').then((m) => m.DashboardComponent),
-  },
-  {
-    path: ROUTE_PATHS.BIBLE,
-    canActivate: [authGuard],
-    loadComponent: () => import('./features/bible/bible.component').then((m) => m.BibleComponent),
-  },
-  {
-    path: ROUTE_PATHS.SONGS,
-    canActivate: [authGuard],
-    loadComponent: () => import('./features/song/song.component').then((m) => m.SongComponent),
+    component: AuthenticatedLayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./features/dashboard/dashboard.routes'),
+      },
+      {
+        path: 'songs',
+        loadChildren: () => import('./features/song/song.routes'),
+      },
+      {
+        path: 'bible',
+        loadChildren: () => import('./features/bible/bible.routes'),
+      },
+    ],
   },
   { path: '**', redirectTo: ROUTE_PATHS.NOT_FOUND },
 ];

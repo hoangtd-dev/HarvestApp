@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 
 import { Route } from '@core/models';
 import { selectRoutes } from '@store/selectors';
+import { navigateTo } from '@store/actions/sidebar.actions';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,6 +21,7 @@ export class SidebarComponent {
   public routes$: Observable<Route[]> = this._store.select(selectRoutes);
 
   public navigate(path: string): void {
+    this._store.dispatch(navigateTo({ path }));
     this._router.navigate([path]);
   }
 

@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
-export const authGuard = () => {
+export const authGuard: CanActivateFn = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
@@ -14,7 +14,7 @@ export const authGuard = () => {
   return false;
 };
 
-export const nonAuthGuard = () => {
+export const nonAuthGuard: CanActivateFn = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
@@ -24,4 +24,4 @@ export const nonAuthGuard = () => {
 
   router.navigate(['/dashboard']);
   return false;
-}; 
+};
