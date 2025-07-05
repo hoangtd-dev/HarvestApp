@@ -1,17 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { authGuard, nonAuthGuard } from './core/auth/auth.guard';
+import { authGuard, nonAuthGuard } from './core/guards/auth.guard';
 import { NonAuthenticatedLayoutComponent } from './layouts/non-authenticated-layout/non-authenticated-layout.component';
 import { AuthenticatedLayoutComponent } from './layouts/authenticated-layout/authenticated-layout.component';
-
-export const ROUTE_PATHS = {
-  DASHBOARD: 'dashboard',
-  SONGS: 'songs',
-  BIBLE: 'bible',
-  AUTH: 'auth',
-  LOGIN: 'login',
-  NOT_FOUND: 'not-found',
-};
 
 export const routes: Routes = [
   {
@@ -21,7 +12,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'login',
-        loadComponent: () => import('./core/auth/auth.component').then((m) => m.AuthComponent),
+        loadComponent: () => import('./auth/login/login.component').then((m) => m.LoginComponent),
       },
     ],
   },
@@ -31,18 +22,14 @@ export const routes: Routes = [
     component: AuthenticatedLayoutComponent,
     children: [
       {
-        path: 'dashboard',
-        loadChildren: () => import('./features/dashboard/dashboard.routes'),
+        path: 'pptx-generator',
+        loadChildren: () => import('./features/pptx-generator/pptx-generator.routes'),
       },
       {
-        path: 'songs',
-        loadChildren: () => import('./features/song/song.routes'),
-      },
-      {
-        path: 'bible',
-        loadChildren: () => import('./features/bible/bible.routes'),
+        path: 'core-configuration',
+        loadChildren: () => import('./features/core-configuration/core-configuration.routes'),
       },
     ],
   },
-  { path: '**', redirectTo: ROUTE_PATHS.NOT_FOUND },
+  { path: '**', redirectTo: 'not-found' },
 ];

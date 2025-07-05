@@ -7,22 +7,16 @@ import { ISidebarState } from '@core/interfaces';
 const initialValue: ISidebarState = {
   routes: [
     {
-      name: 'Dashboard',
-      path: '/dashboard',
+      name: 'PPTX Generator',
+      path: '/pptx-generator',
       isActive: true,
-      iconStr: 'dashboard',
+      icon: 'co_present',
     },
     {
-      name: 'Songs',
-      path: '/songs',
+      name: 'Configuration',
+      path: '/core-configuration',
       isActive: false,
-      iconStr: 'library_music',
-    },
-    {
-      name: 'Bible',
-      path: '/bible',
-      isActive: false,
-      iconStr: 'menu_book',
+      icon: 'settings',
     },
   ],
 };

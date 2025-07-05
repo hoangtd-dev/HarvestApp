@@ -2,7 +2,7 @@ import { map, Observable, of } from 'rxjs';
 
 import { QueryParams, DataResponse, SingleDataResponse } from '@core/models';
 
-export class BaseService<T> {
+export class BaseService<T = any> {
   constructor() {}
 
   protected get(
