@@ -1,9 +1,9 @@
 import express from "express";
-import { authMiddleware } from "./middlewares/authMiddleware.mjs";
-import { errorHandlerMiddleware } from "./middlewares/errorHandlerMiddleware.mjs";
-import router from "./routes/index.mjs";
+import { authMiddleware } from "./middlewares/authMiddleware";
+import { errorHandlerMiddleware } from "./middlewares/errorHandlerMiddleware";
 import cors from "cors";
 import dotenv from "dotenv";
+import router from "./routes/index";
 
 dotenv.config();
 

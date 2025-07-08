@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { validateCreateUser } from "../validators/userValidators.mjs";
-import UserController from "../controllers/userController.mjs";
-import { validatorErrorResolverMiddleware } from "../middlewares/validatorErrorResolverMiddleware.mjs";
+import { validateCreateUser } from "../validators/userValidators";
+import UserController from "../controllers/userController";
+import { validatorErrorResolverMiddleware } from "../middlewares/validatorErrorResolverMiddleware";
 
 const router = Router();
 

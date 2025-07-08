@@ -1,8 +1,10 @@
-const createUser = async (user) => {
+import { UserModel } from "../models/userModel";
+
+const createUser = async (user: UserModel) => {
   return {};
 };
 
-const getUserById = async (id) => {
+const getUserById = async (id: number) => {
   return {};
 };
 
