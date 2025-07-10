@@ -1,9 +1,9 @@
 import express from "express";
-import { authMiddleware } from "./middlewares/authMiddleware";
-import { errorHandlerMiddleware } from "./middlewares/errorHandlerMiddleware";
 import cors from "cors";
 import dotenv from "dotenv";
-import router from "./routes/index";
+
+import authRouter from "./routes/auth-routes/index";
+import nonAuthRouter from "./routes/non-auth-routes/index";
 
 dotenv.config();
 
@@ -13,10 +13,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(authMiddleware);
+app.use(`/api/${process.env.API_VERSION}`, nonAuthRouter, authRouter);
 
-app.use(`/api/${process.env.API_VERSION}`, router);
-
-app.use(errorHandlerMiddleware);
+// app.use(errorHandlerMiddleware);
 
 export default app;
