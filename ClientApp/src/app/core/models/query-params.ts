@@ -1,1 +1,3 @@
-export class QueryParams {}
+export interface QueryParams {
+  [key: string]: string | number | boolean | undefined;
+}
