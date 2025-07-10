@@ -1,0 +1,21 @@
+<div class="flex h-full w-full items-center justify-between px-6">
+  <div class="flex select-none items-center gap-2">
+    <img class="h-10 w-10" src="assets/logo.ico" alt="Logo" />
+    <p>Sydney Harvest <span class="font-bold">Church</span></p>
+  </div>
+
+  <div class="flex items-center justify-center gap-2">
+    <span
+      class="material-symbols-outlined cursor-pointer rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-600"
+      (click)="changeTheme()"
+    >
+      {{ iconCode() }}
+    </span>
+
+    <span
+      class="material-symbols-outlined cursor-pointer rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-600"
+    >
+      notifications
+    </span>
+  </div>
+</div>

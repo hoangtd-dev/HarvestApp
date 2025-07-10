@@ -1,0 +1,38 @@
+<!-- User Info-->
+<div class="w-full">
+  <div class="px-4 py-6 flex items-center gap-2">
+    <img class="w-14 h-14 rounded-full bg-neutral-300 dark:bg-neutral-700" src="assets/avatar.svg" alt="avatar">
+    
+    <div>
+      <p class="font-bold">Hoang Tran</p>
+      <p class="text-xs text-neutral-500">Admin</p>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div class="flex h-full w-full flex-col justify-between">
+  <div>
+    @for (route of routes$ | async; track route) {
+      <div
+        class="flex w-full cursor-pointer items-center gap-2 p-4 hover:bg-primary-200 hover:text-primary-600 dark:hover:bg-neutral-800 dark:hover:text-primary-300"
+        (click)="navigate(route.path)"
+        [ngClass]="{
+          'border-l-4 border-l-primary-600 bg-neutral-100 font-bold text-primary-600 dark:bg-neutral-800 dark:text-primary-300':
+            route.isActive,
+        }"
+      >
+        <span class="material-symbols-outlined cursor-pointer">{{ route.icon }}</span>
+        <span>{{ route.name }}</span>
+      </div>
+    }
+  </div>
+
+  <div
+    class="flex w-full cursor-pointer items-center gap-2 p-4 hover:bg-red-200 hover:text-red-600 dark:hover:bg-red-800 dark:hover:text-red-300"
+    (click)="logout()"
+  >
+    <span class="material-symbols-outlined cursor-pointer">logout</span>
+    <span>logout</span>
+  </div>
+</div>

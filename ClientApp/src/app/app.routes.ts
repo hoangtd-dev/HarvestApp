@@ -1,36 +1,35 @@
 import { Routes } from '@angular/router';
-import { provideEffects } from '@ngrx/effects';
-import { provideState } from '@ngrx/store';
 
-import { ChapterEffects, VerseEffects } from '@store/effects';
-import { chapterReducer, verseReducer } from '@store/reducers';
-
-import { ROUTE_PATHS } from '@shared/constants';
+import { authGuard, nonAuthGuard } from './core/guards/auth.guard';
+import { NonAuthenticatedLayoutComponent } from './layouts/non-authenticated-layout/non-authenticated-layout.component';
+import { AuthenticatedLayoutComponent } from './layouts/authenticated-layout/authenticated-layout.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: ROUTE_PATHS.DASHBOARD,
-    loadComponent: () =>
-      import('./components/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent
-      ),
-  },
-  {
-    path: ROUTE_PATHS.BIBLE,
-    loadComponent: () =>
-      import('./components/bible/bible.component').then(
-        (m) => m.BibleComponent
-      ),
-    providers: [
-      provideState({ name: 'chapters', reducer: chapterReducer }),
-      provideState({ name: 'verses', reducer: verseReducer }),
-      provideEffects([ChapterEffects, VerseEffects]),
+    path: '',
+    canActivate: [nonAuthGuard],
+    component: NonAuthenticatedLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        loadComponent: () => import('./auth/login/login.component').then((m) => m.LoginComponent),
+      },
     ],
   },
   {
-    path: ROUTE_PATHS.SONGS,
-    loadComponent: () =>
-      import('./components/song/song.component').then((m) => m.SongComponent),
+    path: '',
+    canActivate: [authGuard],
+    component: AuthenticatedLayoutComponent,
+    children: [
+      {
+        path: 'pptx-generator',
+        loadChildren: () => import('./features/pptx-generator/pptx-generator.routes'),
+      },
+      {
+        path: 'core-configuration',
+        loadChildren: () => import('./features/core-configuration/core-configuration.routes'),
+      },
+    ],
   },
+  { path: '**', redirectTo: 'not-found' },
 ];
