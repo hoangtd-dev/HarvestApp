@@ -4,16 +4,20 @@ import { User } from '@models/api/auth/user.model';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService extends BaseService<User> {
+  constructor() {
+    super();
+  }
+
   public getMe(): Observable<User> {
     // TODO: Mock data
     return of({
       id: '1',
       name: 'Hoang Tran',
       email: 'hoang@gmail.com',
-      role: 'admin'
+      role: 'admin',
     } as User);
   }
 }

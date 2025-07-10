@@ -5,7 +5,10 @@ import { BaseService } from '@core/services';
   providedIn: 'root',
 })
 export class AuthService extends BaseService {
-  constructor() { super() }
+  constructor() {
+    super();
+  }
+
   public isAuthenticated(): boolean {
     // TODO: Implement authentication check
     return true;
