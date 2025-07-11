@@ -11,6 +11,9 @@ module.exports = {
         primary: colors.blue,
         neutral: colors.gray,
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
