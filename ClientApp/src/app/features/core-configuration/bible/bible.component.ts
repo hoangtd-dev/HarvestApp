@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-bible',
+  selector: 'shc-bible',
   imports: [],
-  templateUrl: './bible.component.html'
+  templateUrl: './bible.component.html',
 })
-export class BibleComponent {
-
-}
+export class BibleComponent {}

@@ -6,7 +6,7 @@ import { selectIsDarkTheme } from '@store/selectors';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-header',
+  selector: 'shc-header',
   imports: [MatIconModule],
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

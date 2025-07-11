@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-not-found',
+  selector: 'shc-not-found',
   standalone: true,
   templateUrl: './not-found.component.html',
 })

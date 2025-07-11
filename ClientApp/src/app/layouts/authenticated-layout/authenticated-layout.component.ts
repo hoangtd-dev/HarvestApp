@@ -6,7 +6,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-authenticated-layout',
+  selector: 'shc-authenticated-layout',
   imports: [CommonModule, RouterOutlet, SidebarComponent, HeaderComponent],
   templateUrl: './authenticated-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -10,7 +10,7 @@ import { selectRoutes } from '@store/selectors';
 import { navigateTo } from '@store/actions/sidebar.actions';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'shc-sidebar',
   imports: [CommonModule],
   templateUrl: './sidebar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
