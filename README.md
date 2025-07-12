@@ -4,6 +4,8 @@ A full-stack application for Harvest Church management, built with Angular (Fron
 
 ## Jira Automation
 
+Integrate Jira with Github repo
+
 ## 🏗️ Project Structure
 
 ```
