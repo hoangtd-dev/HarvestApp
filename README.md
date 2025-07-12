@@ -2,6 +2,8 @@
 
 A full-stack application for Harvest Church management, built with Angular (Frontend) and Node.js/Express (Backend).
 
+## Jira Automation
+
 ## 🏗️ Project Structure
 
 ```

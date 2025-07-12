@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-song',
+  selector: 'shc-song',
   imports: [],
-  templateUrl: './song.component.html'
+  templateUrl: './song.component.html',
 })
-export class SongComponent {
-
-}
+export class SongComponent {}
